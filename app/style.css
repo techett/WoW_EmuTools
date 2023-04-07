@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(35, 115, 214);
+    color: antiquewhite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+}
+
+.col-1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    padding: auto;
+}
+
+.col-2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+.col-3 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    grid-gap: 10%;
+}
+
+.results {
+    display: grid;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+#results_button {
+    width: fit-content;
+}
+
+#result {
+    display: grid;
+    justify-content: center;
+}

@@ -1,0 +1,17 @@
+ID, Race_Mask, Race_Name
+
+1	1	Human
+2	2	Orc
+3	4	Dwarf
+4	8	Night Elf
+5	16	Undead
+6	32	Tauren
+7	64	Gnome
+8	128	Troll
+9	256	Goblin (4.x)
+10	512	Blood Elf
+11	1024	Draenei
+22	2097152	Worgen (4.x)
+24	8388608	Pandaren Neutral (5.x)
+25	16777216	Pandaren Alliance (5.x)
+26	33554432	Pandaren Horde (5.x)

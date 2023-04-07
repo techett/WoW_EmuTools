@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app/style.css">
+    <title>Race Mask</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <form>
+                <div class="col-1">
+                    <h2>Alliance</h2>
+                    <label for="Human">Human</label>
+                    <input type="checkbox" id="Human" name="race" value="Human">
+                    <br>
+                    <label for="Gnome">Gnome</label>
+                    <input type="checkbox" id="Gnome" name="race" value="Gnome">
+                    <br>
+                    <label for="Dwarf">Dwarf</label>
+                    <input type="checkbox" id="Dwarf" name="race" value="Dwarf">
+                    <br>
+                    <label for="Night_Elf">Night Elf</label>
+                    <input type="checkbox" id="Night_Elf" name="race" value="Night_Elf">
+                    <br>
+                    <label for="Draenei">Draenei</label>
+                    <input type="checkbox" id="Draenei" name="race" value="Draenei">
+                    <br>
+                    <label for="Worgen">Worgen</label>
+                    <input type="checkbox" id="Worgen" name="race" value="Worgen">
+                    <br>
+                    <label for="Pandaren_A">Pandaren</label>
+                    <input type="checkbox" id="Pandaren_A" name="race" value="Pandaren_A">
+                    <br>
+                </div>
+                <div class="col-2">
+                    <h2>Horde</h2>
+                    <label for="Orc">Orc</label>
+                    <input type="checkbox" id="Orc" name="race" value="Orc">
+                    <br>
+                    <label for="Undead">Undead</label>
+                    <input type="checkbox" id="Undead" name="race" value="Undead">
+                    <br>
+                    <label for="Troll">Troll</label>
+                    <input type="checkbox" id="Troll" name="race" value="Troll">
+                    <br>
+                    <label for="Tauren">Tauren</label>
+                    <input type="checkbox" id="Tauren" name="race" value="Tauren">
+                    <br>
+                    <label for="Goblin">Goblin</label>
+                    <input type="checkbox" id="Goblin" name="race" value="Goblin">
+                    <br>
+                    <label for="Blood_Elf">Blood Elf</label>
+                    <input type="checkbox" id="Blood_Elf" name="race" value="Blood_Elf">
+                    <br>
+                    <label for="Pandaren_H">Pandaren</label>
+                    <input type="checkbox" id="Pandaren_H" name="race" value="Pandaren_H">
+                    <br>
+                </div>
+                <div class="col-3">
+                    <h2>Neutral Races</h2>
+                    <label for="Pandaren_N">Pandaren</label>
+                    <input type="checkbox" id="Pandaren_N" name="race" value="Pandaren_N">
+                    <br>
+                </div>
+            </form>
+            <div class="results">
+                <button id="results_button" type="button" onclick="raceCalculator()">Calculate Race Mask</button>
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script>
+        var races = [
+            { id: 1, mask: 1, name: "Human" }, //alliance
+            { id: 2, mask: 2, name: "Orc" }, //horde
+            { id: 3, mask: 4, name: "Dwarf" }, //alliance
+            { id: 4, mask: 8, name: "Night_Elf" }, //alliance
+            { id: 5, mask: 16, name: "Undead" }, //horde
+            { id: 6, mask: 32, name: "Tauren" }, //horde
+            { id: 7, mask: 64, name: "Gnome" }, //alliance
+            { id: 8, mask: 128, name: "Troll" }, //horde
+            { id: 9, mask: 256, name: "Goblin" }, //horde
+            { id: 10, mask: 512, name: "Blood_Elf" }, // horde
+            { id: 11, mask: 1024, name: "Draenei" }, //alliance
+            { id: 22, mask: 2097152, name: "Worgen" }, //alliance
+            { id: 24, mask: 8388608, name: "Pandaren_N" }, //neutral
+            { id: 25, mask: 16777216, name: "Pandaren_A" }, //alliance
+            { id: 26, mask: 33554432, name: "Pandaren_H" } //horde
+        ];
+
+        function raceCalculator() {
+            var checkboxes = {};
+            for (var i = 0; i < races.length; i++) {
+                checkboxes[races[i].name] = document.getElementById(races[i].name);
+            }
+
+            var raceMask = 0;
+            for (var i = 0; i < races.length; i++) {
+                if (checkboxes[races[i].name].checked) {
+                    raceMask += races[i].mask;
+                }
+            }
+
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Your race mask is: " + raceMask;
+        }          
+    </script>
+
+</body>
+
+</html>
