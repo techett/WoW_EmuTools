@@ -8,10 +8,10 @@ Navigating this repository is setup in a way that it should be easy to find what
 
 ## List of Done
 1. Race Mask - calculate racemasks quickly and easily by selecting the race(s) you need to include. This is currently made for usage up to MoP 5.4.8(Max)
+2. Class Mask - calculate class masks quickly and easily by selecting the class(es) you need to include.
 
 ## Coming Soon
-1. Class Mask.
-2. SQL Creation - Not currently known what will be included.
+1. SQL Creation - Not currently known what will be included.
 
 ## Suggestions?
 If you have suggestions please create an issue and give me some ideas. 
