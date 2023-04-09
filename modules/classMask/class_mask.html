@@ -11,11 +11,90 @@
 
 <body>
     <div class="main">
-
+        <div class="container">
+            <form>
+                <div class="col-1">
+                    <h2>Vanilla Classes</h2>
+                    <label for="Warrior">Warrior</label>
+                    <input type="checkbox" id="Warrior" name="class" value="Warrior">
+                    <br />
+                    <label for="Paladin">Paladin</label>
+                    <input type="checkbox" id="Paladin" name="class" value="Paladin">
+                    <br />
+                    <label for="Priest">Priest</label>
+                    <input type="checkbox" id="Priest" name="class" value="Priest">
+                    <br />
+                    <label for="Shaman">Shaman</label>
+                    <input type="checkbox" id="Shaman" name="class" value="Shaman">
+                    <br />
+                    <label for="Mage">Mage</label>
+                    <input type="checkbox" id="Mage" name="class" value="Mage">
+                    <br />
+                    <label for="Hunter">Hunter</label>
+                    <input type="checkbox" id="Hunter" name="class" value="Hunter">
+                    <br />
+                    <label for="Rogue">Rogue</label>
+                    <input type="checkbox" id="Rogue" name="class" value="Rogue">
+                    <br />
+                    <label for="Druid">Druid</label>
+                    <input type="checkbox" id="Druid" name="class" value="Druid">
+                    <br />
+                    <label for="Warlock">Warlock</label>
+                    <input type="checkbox" id="Warlock" name="class" value="Warlock">
+                    <br />
+                </div>
+                <div class="col-2">
+                    <h2>Hero Classes</h2>
+                    <label for="Death_Knight">Death Knight</label>
+                    <input type="checkbox" id="Death_Knight" name="class" value="Death_Knight">
+                    <br />
+                    <label for="Monk">Monk</label>
+                    <input type="checkbox" id="Monk" name="class" value="Monk">
+                    <br />
+                    <label for="Demon_Hunter">Demon Hunter</label>
+                    <input type="checkbox" id="Demon_Hunter" name="class" value="Demon_Hunter">
+                    <br />
+                </div>
+            </form>
+            <div class="results">
+                <button id="results_button" type="button" onclick="classCalculator()">Calculate</button>
+                <div id="result"></div>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript">
+        var classes = [
+            { id: 1, mask: 1, name: "Warrior" },
+            { id: 2, mask: 2, name: "Paladin" },
+            { id: 3, mask: 4, name: "Hunter" },
+            { id: 4, mask: 8, name: "Rogue" },
+            { id: 5, mask: 16, name: "Priest" },
+            { id: 6, mask: 32, name: "Death_Knight" },
+            { id: 7, mask: 64, name: "Shaman" },
+            { id: 8, mask: 128, name: "Mage" },
+            { id: 9, mask: 256, name: "Warlock" },
+            { id: 10, mask: 512, name: "Monk" },
+            { id: 11, mask: 1024, name: "Druid" },
+            { id: 12, mask: 2048, name: "Demon_Hunter" }
+        ];
 
+        function classCalculator() {
+            var checkboxes = {};
+            for (var i = 0; i < classes.length; i++) {
+                checkboxes[classes[i].name] = document.getElementById(classes[i].name);
+            }
+
+            var classMask = 0;
+            for (const element of classes) {
+                if (checkboxes[element.name].checked) {
+                    classMask += element.mask;
+                }
+            }
+
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Your class mask is: " + classMask;
+        }
     </script>
 </body>
 
