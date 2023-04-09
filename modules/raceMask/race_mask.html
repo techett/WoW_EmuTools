@@ -104,9 +104,9 @@
             }
 
             var raceMask = 0;
-            for (var i = 0; i < races.length; i++) {
-                if (checkboxes[races[i].name].checked) {
-                    raceMask += races[i].mask;
+            for (const element of races) {
+                if (checkboxes[element.name].checked) {
+                    raceMask += element.mask;
                 }
             }
 
