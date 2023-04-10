@@ -12,6 +12,7 @@ Navigating this repository is setup in a way that it should be easy to find what
 
 ## Coming Soon
 1. SQL Creation - Not currently known what will be included.
+2. List of Game Objects based on categories. - This may be a group project as there are thousands of gobs that are useful.
 
 ## Suggestions?
 If you have suggestions please create an issue and give me some ideas. 
